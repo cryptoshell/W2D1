@@ -2,6 +2,11 @@ const https = require("https");
 
 function getHTML (options, printHTML(html)) {
 
+  function getAndPrintHTML (options) {
+    requestOptions.host = options.host;
+    requestOptions.path = options.path;
+  }
+
   https.get(requestOptions, function (response) {
   response.setEncoding('utf8');
   response.on('data', function (data) {
