@@ -1,3 +1,5 @@
+const https = require("https");
+
 module.exports = function getHTML (options, callback) {
   const https = require("https");
 
