@@ -1,6 +1,4 @@
-const https = require('https');
 const getHTML = require('./http-functions');
-
 
 const requestOptions = {
   host: 'sytantris.github.io',

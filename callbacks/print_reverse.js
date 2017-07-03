@@ -1,15 +1,15 @@
 const https = require('https');
-const getHTML = require('./http-functions');
+const getHTML = require('../http-functions');
 
 var requestOptions = {
   host: 'sytantris.github.io',
   path: '/http-examples/step6/reverse.html'
 };
 
-function printUpperCase (html) {
-  const reversed = html.reverse();
+const printReversed = function reverse (html) {
+  const reversed = html.split("").reverse().join("");
   console.log(reversed);
 
 }
 
-getHTML(requestOptions, printUpperCase);
+getHTML(requestOptions, printReversed);

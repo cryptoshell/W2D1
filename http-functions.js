@@ -1,19 +1,20 @@
 module.exports = function getHTML (options, callback) {
+  const https = require("https");
 
-  function getAndPrintHTML (options) {
-    https.get(options, function (response) {
+  https.get(options, function (response) {
 
-      response.setEncoding('utf8');
+    response.setEncoding('utf8');
 
-      response.on('data', function (data) {
-        let allData = '';
-        allData += data;
-        callback(allData);
-      });
-
-      response.on('end', function() {
-        console.log('Response stream complete.');
-      });
+    response.on('data', function (data) {
+      let allData = '';
+      allData += data;
+      callback(allData);
     });
-  }
+
+    response.on('end', function() {
+      console.log('Response stream complete.');
+    });
+  });
 }
+
+
