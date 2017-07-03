@@ -8,15 +8,19 @@ function getAndPrintHTML () {
   };
 
   https.get(requestOptions, function (response) {
-  response.setEncoding('utf8');
-  response.on('data', function (data) {
-    let allData = '';
-    allData += data;
-    console.log('All Data Received:', allData);
-  });
 
-  response.on('end', function() {
-    console.log('Response stream complete.');
-  });
+    response.setEncoding('utf8');
 
+    response.on('data', function (data) {
+      let allData = '';
+      allData += data;
+      console.log('All Data Received:', allData);
+    });
+
+    response.on('end', function() {
+      console.log('Response stream complete.');
+    });
+  });
 }
+
+getAndPrintHTML();
