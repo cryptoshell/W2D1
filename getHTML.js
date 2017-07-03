@@ -1,24 +1,24 @@
 const https = require("https");
 
-function getHTML (options, printHTML(html)) {
+function getHTML (options, callback) {
 
-  function getAndPrintHTML (options) {
-    requestOptions.host = options.host;
-    requestOptions.path = options.path;
-  }
+   https.get(options, function (response) {
 
-  https.get(requestOptions, function (response) {
-  response.setEncoding('utf8');
-  response.on('data', function (data) {
-    let allData = '';
-    allData += data;
-    console.log('All Data Received:', allData);
+    response.setEncoding('utf8');
+
+    response.on('data', function (data) {
+      let allData = '';
+      allData += data;
+      callback(allData);
+    });
+
+    response.on('end', function() {
+      console.log('Response stream complete.');
+    });
   });
-
-  response.on('end', printHTML(html));
 }
 
-function printHTML (html) {
+const printHTML = function printHTML (html) {
   console.log(html);
 }
 
@@ -27,3 +27,4 @@ const requestOptions = {
   path: '/http-examples/step4.html'
 };
 
+getHTML(requestOptions, printHTML);
