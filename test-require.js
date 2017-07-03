@@ -5,8 +5,10 @@ const getHTML = require('./http-functions');
 const requestOptions = {
   host: 'sytantris.github.io',
   path: '/http-examples/step5.html'
-};
+}
 
-function printHTML (html) {
+const printHTML = function printHTML (html) {
   console.log(html);
 }
+
+getHTML(requestOptions, printHTML);
