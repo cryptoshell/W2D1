@@ -1,4 +1,3 @@
-const https = require('https');
 const getHTML = require('../http-functions');
 
 var requestOptions = {
