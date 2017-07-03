@@ -1,8 +1,8 @@
-var https = require('https');
-var getHTML = require('./http-functions');
+const https = require('https');
+const getHTML = require('./http-functions');
 
 
-var requestOptions = {
+const requestOptions = {
   host: 'sytantris.github.io',
   path: '/http-examples/step5.html'
 };

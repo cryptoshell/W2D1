@@ -9,7 +9,7 @@ module.exports = function getHTML (options, callback) {
     https.get(requestOptions, function (response) {
     response.setEncoding('utf8');
     response.on('data', function (data) {
-      let allData = '';
+      var allData = '';
       allData += data;
       console.log('All Data Received:', allData);
     });
@@ -21,7 +21,7 @@ module.exports = function getHTML (options, callback) {
     console.log(html);
   }
 
-  const requestOptions = {
+  var requestOptions = {
     host: 'sytantris.github.io',
     path: '/http-examples/step4.html'
 

@@ -10,7 +10,7 @@ function getHTML (options, printHTML(html)) {
   https.get(requestOptions, function (response) {
   response.setEncoding('utf8');
   response.on('data', function (data) {
-    var allData = '';
+    let allData = '';
     allData += data;
     console.log('All Data Received:', allData);
   });
@@ -22,7 +22,7 @@ function printHTML (html) {
   console.log(html);
 }
 
-var requestOptions = {
+const requestOptions = {
   host: 'sytantris.github.io',
   path: '/http-examples/step4.html'
 };

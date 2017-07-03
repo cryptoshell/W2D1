@@ -5,7 +5,7 @@ function getAndPrintHTML (options) {
   requestOptions.path = options.path;
 }
 
-var requestOptions = {
+const requestOptions = {
   host: 'sytantris.github.io',
   path: '/http-examples/step3.html'
 };
@@ -13,7 +13,7 @@ var requestOptions = {
 https.get(requestOptions, function (response) {
 response.setEncoding('utf8');
 response.on('data', function (data) {
-  var allData = '';
+  let allData = '';
   allData += data;
   console.log('All Data Received:', allData);
 });
